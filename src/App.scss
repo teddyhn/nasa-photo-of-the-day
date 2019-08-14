@@ -1,0 +1,59 @@
+h1, h2 {
+    color: #FFFFFF;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 33vw;
+    height: 90vh;
+    margin: 2vh auto;
+    border-radius: 20px;
+    background-color: #1C1E20;
+
+    .header {
+        display: flex;
+        align-items: center;
+        background-color: #222222;
+        padding: 1%;
+        border-radius: 20px 20px 0 0;
+
+        .logo {
+            width: auto;
+            height: 10vh;
+        }
+    }
+
+    .body {
+        padding: 1%;
+    }
+
+    .text {
+        background-color: #292929;
+        width: 90%;
+        padding: 1px 20px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    p {
+        color: #747474;
+        font-size: 1rem;
+    }
+
+    .date {
+        text-align: right;
+        color: #5B8FB4;
+        margin-right: 2%;
+    }
+}
+
+.photo-container {
+    text-align: center;
+    margin: 1% 0;
+
+    img {
+        height: 33vh;
+        max-width: 100%;
+    }
+}
