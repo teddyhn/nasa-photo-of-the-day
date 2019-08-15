@@ -76,4 +76,17 @@ h1, h2 {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+
+.modal-body {
+  margin: auto;
+}
+
+.modal-body img {
+  width: 78vw;
+  height: auto;
+}
+
+.modal-80w {
+  max-width: 80vw;
+}
 /*# sourceMappingURL=App.css.map */

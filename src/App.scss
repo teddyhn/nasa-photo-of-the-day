@@ -65,3 +65,16 @@ h1, h2 {
 .btn-primary:focus, .btn:focus, .show>.btn-primary.dropdown-toggle:focus {
     box-shadow: none;
 }
+
+.modal-body {
+    margin: auto;
+
+    img {
+        width: 78vw;
+        height: auto;
+    }
+}
+
+.modal-80w {
+    max-width: 80vw;
+}

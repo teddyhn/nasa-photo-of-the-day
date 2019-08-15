@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import Modal from "react-bootstrap/Modal";
 import PhotoDisplay from "./PhotoDisplay";
 import PhotoTitle from "./PhotoTitle";
 import PhotoExplanation from "./PhotoExplanation";
@@ -11,6 +12,10 @@ import axios from "axios";
 export default function PhotoCard() {
     const [photo, setPhoto] = useState([]);
     const [currentDate, setCurrentDate] = useState('');
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
         axios
@@ -32,7 +37,7 @@ export default function PhotoCard() {
         let months30Days = [4, 6, 9, 11]
         let month28Days = [2]
       
-        for (let i = 1; i <= 4; i++) {
+        for (let i = 1; i <= 7; i++) {
             let heldDate = date.slice(0, 8);
       
             let heldYear = date.slice(0, 5);
@@ -81,9 +86,6 @@ export default function PhotoCard() {
         return datesArray;
     }
       
-
-    console.log(datesArrayCreator(currentDate));
-
     return (
         <div className="card">
             <div className="header">
@@ -91,7 +93,7 @@ export default function PhotoCard() {
                 <h1>Photo of the Day</h1>
             </div>
             <div className="body">
-                <PhotoDisplay url={photo.url} />
+                <PhotoDisplay url={photo.url} onClick={handleShow}/>
                 <div className="text">
                     <PhotoTitle title={photo.title} />
                     <PhotoExplanation explanation={photo.explanation} />
@@ -111,6 +113,15 @@ export default function PhotoCard() {
                     })}
                 </DropdownButton>
             </div>
+            <Modal
+                show={show} 
+                onHide={handleClose}
+                dialogClassName="modal-80w"
+            >
+                <Modal.Body>
+                    <img src={photo.hdurl} />
+                </Modal.Body>
+            </Modal>
         </div>
     );
 }
