@@ -27,21 +27,60 @@ export default function PhotoCard() {
 
     const datesArrayCreator = (date) => {
         let datesArray = [];
+        let floatZero = "0";
+        let months31Days = [1, 3, 5, 7, 8, 10, 12]
+        let months30Days = [4, 6, 9, 11]
+        let month28Days = [2]
       
         for (let i = 1; i <= 4; i++) {
             let heldDate = date.slice(0, 8);
+      
+            let heldYear = date.slice(0, 5);
+            console.log(heldYear);
                 
             let appendDate = date.slice(8);
             appendDate = parseInt(appendDate) - 1;
+      
+            if (appendDate <= 9 && appendDate > 0) {
+              let floatString = appendDate.toString();
+              let newAppendDate = floatZero.concat(floatString);
+              appendDate = newAppendDate;
+            } else if (appendDate <= 0) {
+              let month = heldDate.slice(5);
+              let floatMonth = parseInt(month) - 1;
+              let appendMonth = floatMonth.toString();
+      
+              months31Days.forEach(month => {
+                if (floatMonth === month) {
+                  appendDate = "31";
+                }
+              })
+      
+              months30Days.forEach(month => {
+                if (floatMonth === month) {
+                  appendDate = "30";
+                }
+              })
+      
+              month28Days.forEach(month => {
+                if (floatMonth === month) {
+                  appendDate = "28";
+                }
+              })
+      
+              appendMonth = floatZero.concat(appendMonth, "-");
+              heldDate = heldYear.concat(appendMonth);
+            }
             
             let newDate = heldDate.concat(appendDate);
             datesArray.unshift(newDate);
-        
+      
             date = newDate;
-        }
-        
+          }
+      
         return datesArray;
     }
+      
 
     console.log(datesArrayCreator(currentDate));
 

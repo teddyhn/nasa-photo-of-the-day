@@ -37,6 +37,10 @@ h1, h2 {
   height: 10vh;
 }
 
+.card .header h1 {
+  margin-left: .5rem;
+}
+
 .card .body {
   padding: 0 5%;
 }
