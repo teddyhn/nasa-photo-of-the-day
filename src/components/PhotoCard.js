@@ -85,12 +85,14 @@ export default function PhotoCard() {
       
         return datesArray;
     }
+
+    console.log(photo);
       
     return (
         <div className="card">
             <div className="header">
                 <img className="logo" src={logo}/>
-                <h1>Photo of the Day</h1>
+                <h1>Photo of the Dayyy</h1>
             </div>
             <div className="body">
                 <PhotoDisplay url={photo.url} onClick={handleShow}/>
