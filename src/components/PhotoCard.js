@@ -92,7 +92,7 @@ export default function PhotoCard() {
         <div className="card">
             <div className="header">
                 <img className="logo" src={logo}/>
-                <h1>Photo of the Dayyy</h1>
+                <h1>Photo of the Day</h1>
             </div>
             <div className="body">
                 <PhotoDisplay url={photo.url} onClick={handleShow}/>
