@@ -1,0 +1,80 @@
+h1, h2 {
+    color: #FFFFFF;
+    margin-top: .5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 33vw;
+    margin: 2vh auto;
+    border-radius: 20px;
+    background-color: #1C1E20;
+    padding-bottom: 1rem;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.6), -6px -6px 10px rgba(0, 0, 0, 0.6);
+
+    .header {
+        display: flex;
+        align-items: center;
+        background-color: #222222;
+        padding: 1rem;
+        border-radius: 20px 20px 0 0;
+
+        .logo {
+            width: auto;
+            height: 10vh;
+        }
+
+        h1 {
+            margin-left: .5rem;
+        }
+    }
+
+    .body {
+        padding: 0 5%;
+    }
+
+    .text {
+        background-color: #292929;
+        padding: 1px 20px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    p {
+        color: #747474;
+        font-size: 1rem;
+    }
+
+    .dropup {
+        text-align: right;
+        margin-top: .5rem;
+    }
+}
+
+.photo-container {
+    text-align: center;
+    margin: .5rem 0;
+
+    img {
+        height: 33vh;
+        max-width: 100%;
+    }
+}
+
+.btn-primary:focus, .btn:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.modal-body {
+    margin: auto;
+
+    img {
+        width: 78vw;
+        height: auto;
+    }
+}
+
+.modal-80w {
+    max-width: 80vw;
+}
